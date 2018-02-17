@@ -12,12 +12,12 @@ public class ReviewRepository {
 	Map<Long, Review> reviews = new HashMap<>();
 	private static Review caribbeanvacation = new Review(28L,
 			"Visit Aruba where you'll find dependable sunshine and high rise hotels walking distance from the beach ",
-			"caribbean", "Caribbean", "Vacation");
+			"caribbean", "Caribbean", "Caribbean Vacation", "./images/caribbean.jpg", "./images/barbuda.jpg");
 	private static Review icelandvacation = new Review(38L,
 			"The land of fire and ice, known for the Northern Lights and The Blue Lagoon ", "iceland", "Iceland",
-			"Vacation");
+			"Iceland Vacation", "./images/BlueLagoon.jpg", "./images/northernlights.jpg");
 	private static Review hawaiivacation = new Review(58L, "Beautiful scenerey, total relaxation and fun for all!",
-			"caribbean", "Caribbean", "Vacation");
+			"hawaii", "Hawaii", "Hawaii Vacation", "./images/hawaii.jpg", "./images/hawaii2.jpg");
 
 	public Review findOne(long id) {
 		return reviews.get(id);

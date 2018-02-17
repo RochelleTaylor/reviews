@@ -8,13 +8,14 @@
 
 <body>
 	<header>
-	
-		<h1>A List of Vacation Reviews</h1>
+		<h1>A List of Vacations</h1>
 	</header>
+	
 	<div th:each="review: ${reviews}">
 		<h2>
-			<a th:href="@{/review(id=${review.id})}" th:text="${review.description}"></a>
+			<a th:href="@{/review(id=${review.id})}"  th:text="${review.title}"></a>
 		</h2>
+		
 	</div>
 
 

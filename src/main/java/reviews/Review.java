@@ -7,13 +7,18 @@ public class Review {
 	private String location;
 	private String title;
 	private String category;
+	private String imageUrl;
+	private String imageUrl2;
 
-	public Review(Long id, String description, String location, String title, String category) {
+	public Review(Long id, String description, String location, String title, String category, String imageUrl,
+			String imageUrl2) {
 		this.location = location;
 		this.id = id;
 		this.description = description;
 		this.title = title;
-
+		this.category = category;
+		this.imageUrl = imageUrl;
+		this.imageUrl2 = imageUrl2;
 	}
 
 	public Long getId() {
@@ -35,6 +40,14 @@ public class Review {
 
 	public String getCategory() {
 		return category;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public String getImageUrl2() {
+		return imageUrl2;
 	}
 
 }
