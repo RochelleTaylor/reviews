@@ -23,11 +23,11 @@
 	
 	<article th:each="review: ${reviews}">
 	
-		<h2 th:text="'Vacation:   ' + ${review.category}" ></h2>
+		<h2 th:text="${review.category}" ></h2>
 		
-			<p th:text="${image.description}"></p>
+			<p th:text="${review.imageDescription}"></p>
 		 <img th:src="${review.imageUrl}" /> <!--  alt= "picture of destination"-->
-		 	<p th:text="${image.description}"></p>
+		 	<p th:text="${review.imageDescription2}"></p>
 		 <img th:src="${review.imageUrl2}"/>
 		<p th:text="${review.description}"></p>
 		

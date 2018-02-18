@@ -28,6 +28,9 @@ public class ReviewRepositoryTest {
 	private long thirdReviewId = 58L;
 	@Mock
 	private Review thirdReview;
+	@Mock
+	private Review fourthReview;
+	private long fourthReviewId = 68L;
 
 	@Before
 	public void setup() {
@@ -35,6 +38,7 @@ public class ReviewRepositoryTest {
 		when(firstReview.getId()).thenReturn(firstReviewId);
 		when(secondReview.getId()).thenReturn(secondReviewId);
 		when(thirdReview.getId()).thenReturn(thirdReviewId);
+		when(fourthReview.getId()).thenReturn(fourthReviewId);
 	}
 
 	@Test
@@ -61,9 +65,17 @@ public class ReviewRepositoryTest {
 	}
 
 	@Test
+	public void shouldFindFourthReview() {
+		ReviewRepository underTest = new ReviewRepository(firstReview, secondReview, thirdReview, fourthReview);
+		Review result = underTest.findOne(fourthReviewId);
+
+		assertThat(result, is(fourthReview));
+	}
+
+	@Test
 	public void shouldFindAll() {
-		underTest = new ReviewRepository(firstReview, secondReview, thirdReview);
+		underTest = new ReviewRepository(firstReview, secondReview, thirdReview, fourthReview);
 		Collection<Review> result = underTest.findAll();
-		assertThat(result, containsInAnyOrder(firstReview, secondReview, thirdReview));
+		assertThat(result, containsInAnyOrder(firstReview, secondReview, thirdReview, fourthReview));
 	}
 }
